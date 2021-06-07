@@ -16,8 +16,6 @@ const start = async () => {
     }));
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-    console.log("Cadastro de Gatinhos funcionando")
-
 
     consign()
       .include('adapters/api/routes')
