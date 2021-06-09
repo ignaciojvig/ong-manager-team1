@@ -89,7 +89,7 @@ module.exports = (app) => {
 
   app.post('/upload', upload.single('cat_image'), function (req, res, next) {
     const response = req.file;
-    return response;
+    return  res.status(200).send(response);
   });
 
 };
