@@ -63,10 +63,9 @@ module.exports = (app) => {
     return reply.json(response);
   });
 
-  app.post('/upload/:id', upload.single('cat_image'), (req, res) => {
-    //const response = await controller.getByIdCat(request.params.id, request, reply);
-    //return response;
-    console.log(request.file);
+  app.post('/upload', upload.single('cat_image'), (req, res) => {
+    const response = req.file;
+    return response;
   });
 
 };
