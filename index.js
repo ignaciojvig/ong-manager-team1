@@ -21,7 +21,9 @@ const start = async () => {
       .include('adapters/api/routes')
       .into(app);
 
-    app.listen(3000, () => console.log('http://localhost:3000/api-docs'));
+    
+    app.listen(process.env.PORT, () => console.log(`http://localhost:${process.env.PORT}/api-docs`));
+    
   } catch (err) {
     console.log(err);
     process.exit(1);
