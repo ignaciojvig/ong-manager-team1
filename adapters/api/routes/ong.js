@@ -10,7 +10,12 @@ const storage = multer.diskStorage({
     cb(null, file.originalname); //new Date().toISOString() +
   }
 })
-const upload = multer ({storage : storage});
+const upload = multer ({
+  storage : storage,
+  limits : {
+    fileSize : 1024 * 1024 * 2
+  }
+});
 
 const invalidRequfestReply = (request, reply, errors) => reply.status(400).json({
   method: request.method,
