@@ -27,7 +27,6 @@ class Ong extends Model {
       },
     );
   }
-  
 }
 
 module.exports = Ong;
