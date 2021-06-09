@@ -1,7 +1,16 @@
 const controller = require('../../controllers/ong');
 const validators = require('../validators/ong');
 const multer = require('multer');
-const upload = multer ({dest: 'uploads/'});
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb){
+    cb(null, './uploads/');
+  },
+  filename: function(req, file, cb){
+    cb(null, file.originalname); //new Date().toISOString() +
+  }
+})
+const upload = multer ({storage : storage});
 
 const invalidRequfestReply = (request, reply, errors) => reply.status(400).json({
   method: request.method,
@@ -63,7 +72,7 @@ module.exports = (app) => {
     return reply.json(response);
   });
 
-  app.post('/upload', upload.single('cat_image'), (req, res) => {
+  app.post('/upload', upload.single('cat_image'), function (req, res, next) {
     const response = req.file;
     return response;
   });

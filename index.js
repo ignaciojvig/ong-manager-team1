@@ -26,6 +26,10 @@ const start = async () => {
     console.log(err);
     process.exit(1);
   }
+
 };
+
+
+
 start();
 module.exports = app;
