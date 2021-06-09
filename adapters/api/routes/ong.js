@@ -9,12 +9,22 @@ const storage = multer.diskStorage({
   filename: function(req, file, cb){
     cb(null, file.originalname); //new Date().toISOString() +
   }
-})
+});
+
+const fileFilter = (req, file, cb) => {
+  if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg'){
+    cb(null, true);
+  }else{
+    cb(null,false);
+  }
+}
+
 const upload = multer ({
   storage : storage,
   limits : {
-    fileSize : 1024 * 1024 * 2
-  }
+    fileSize : 1024 * 1024 * 3
+  },
+  fileFilter : fileFilter
 });
 
 const invalidRequfestReply = (request, reply, errors) => reply.status(400).json({
