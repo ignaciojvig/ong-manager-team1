@@ -1,5 +1,5 @@
 const { check, validationResult } = require('express-validator');
-/*
+
 exports.validateRequest = (req) => {
   const result = validationResult(req);
   return result.errors;
@@ -46,4 +46,3 @@ exports.updateValidator = () => [
     .withMessage('invalid phone format'),
 
 ];
-*/
