@@ -21,7 +21,7 @@ const start = async () => {
       .include('adapters/api/routes')
       .into(app);
 
-    app.listen(3000, () => console.log('listening port 3000'));
+    app.listen(3000, () => console.log('http://localhost:3000/api-docs'));
   } catch (err) {
     console.log(err);
     process.exit(1);
