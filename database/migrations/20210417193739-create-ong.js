@@ -30,21 +30,8 @@ module.exports = {
       type: Sequelize.DATE,
       allowNull: false,
     },
-  })
-  .then(() => { 
-    return async (queryInterface, Sequelize) => queryInterface.addColumn(
-    'gatinhos', // name of Source model
-    'ong_id', // name of the key we're adding 
-    {
-      type: Sequelize.UUID,
-      references: {
-        model: 'ongs', // name of Target model
-        key: 'id', // key in Target model that we're referencing
-      },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
-    }
-  )}),
+  }),
+
 
   down: async (queryInterface) => queryInterface.dropTable('ongs'),
 };

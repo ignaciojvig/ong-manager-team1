@@ -27,9 +27,7 @@ class Ong extends Model {
       },
     );
   }
-  static associate(models) {
-    this.hasMany(models.gatinhos, { foreignKey: 'ong_id'});
-  }
+  
 }
 
 module.exports = Ong;
