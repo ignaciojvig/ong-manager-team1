@@ -1,13 +1,15 @@
 const controller = require('../../controllers/ong');
 const validators = require('../validators/ong');
+const multer = require('multer');
+const upload = multer ({dest: 'uploads/'});
 
-const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
+const invalidRequfestReply = (request, reply, errors) => reply.status(400).json({
   method: request.method,
   status: reply.statusCode,
   error: errors,
 });
 
-module.exports = (app) => {
+module.exports = (app) => { 
   app.post('/ong', validators.registerValidator(), async (request, reply) => {
     /*  #swagger.parameters['post ong object'] = {
             in: 'body',
@@ -60,4 +62,11 @@ module.exports = (app) => {
     const response = await controller.delete(request.params.id, request, reply);
     return reply.json(response);
   });
+
+  app.post('/upload/:id', upload.single('cat_image'), (req, res) => {
+    //const response = await controller.getByIdCat(request.params.id, request, reply);
+    //return response;
+    console.log(request.file);
+  });
+
 };
