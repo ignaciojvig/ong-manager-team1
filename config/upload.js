@@ -12,12 +12,11 @@ module.exports = {
 
             filename: (req, file, cb) => {
                   crypto.randomBytes(16, (err, hash) => {
-                        if(err) {
+                        if(err)
                               cb(err);
-                        }else{
-                              const fileName = `${hash.toString('hex')}_${file.originalname}`;
-                              cb(null, fileName);
-                        }
+                        const fileName = `${hash.toString('hex')}_${file.originalname}`;
+                        cb(null, fileName);
+                        
                   });
             },
       }),
