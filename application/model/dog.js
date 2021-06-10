@@ -13,22 +13,22 @@ class Dog extends Model {
           primaryKey: true,
         },
         tipo: {
-            type: DataTypes.STRING,
-            allowNull: false,
-          },
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
         nome: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        possuiDeficiencia: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        cuidadosEspeciais: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        corPelagem: DataTypes.STRING,
+        // possuiDeficiencia: {
+        //   type: DataTypes.STRING,
+        //   allowNull: false,
+        // },
+        // cuidadosEspeciais: {
+        //   type: DataTypes.STRING,
+        //   allowNull: false,
+        // },
+        // corPelagem: DataTypes.STRING,
         sexo: DataTypes.STRING,
         idade: DataTypes.STRING,
         castrado: DataTypes.STRING,
