@@ -1,4 +1,4 @@
-const controller = require('../../controllers/ong');
+const controller = require('../../controllers/gatos');
 const validators = require('../validators/ong');
 
 const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
@@ -32,6 +32,11 @@ module.exports = (app) => {
       return invalidRequestReply(request, reply, errors);
     }
     const response = await controller.post(request, reply);
+    return reply.json(response);
+  });
+
+  app.delete('/gato/:id', async (request, reply) => {
+    const response = await controller.delete(request.params.id, request, reply);
     return reply.json(response);
   });
 

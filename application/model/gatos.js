@@ -18,22 +18,40 @@ class Gatos extends Model {
           },
         name: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
         },
         possuiDeficiencia: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         cuidadosEspeciais: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        corPelagem: DataTypes.STRING,
-        sexo: DataTypes.STRING,
-        idade: DataTypes.STRING,
-        castrado: DataTypes.STRING,
-        teste: DataTypes.STRING,
-        vacinas: DataTypes.STRING,
+        corPelagem: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        sexo: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        idade: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        castrado: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        teste: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        vacinas: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
       },
       {
         sequelize,

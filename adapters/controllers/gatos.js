@@ -1,4 +1,4 @@
-const gatos = require('../../application/services/ong');
+const gato = require('../../application/services/gato');
 
 exports.post = async (request) => {
   const result = await gato.register(request.body);
