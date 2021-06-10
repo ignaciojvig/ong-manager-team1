@@ -52,4 +52,8 @@ exports.registerValidator = () => [
     check('vacinas')
     .notEmpty()
     .withMessage('vacinas is required'),
+
+    check('cat_image')
+    .notEmpty()
+    .withMessage('image is required'),
 ];
