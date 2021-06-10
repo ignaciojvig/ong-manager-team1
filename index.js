@@ -15,8 +15,8 @@ const start = async () => {
     app.use(express.urlencoded({
       extended: true,
     }));
+    app.use(morgan('combined'));
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 
     consign()
       .include('adapters/api/routes')
@@ -31,4 +31,3 @@ const start = async () => {
 start();
 module.exports = app;
 
-app.use(morgan('combined'));
