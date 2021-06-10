@@ -16,8 +16,8 @@ const start = async () => {
       extended: true,
     }));
     app.use(`/${process.env.SWAGGER}`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-
+    app.use(morgan('combined'));
+    
     consign()
       .include('adapters/api/routes')
       .into(app);
@@ -33,4 +33,3 @@ const start = async () => {
 start();
 module.exports = app;
 
-app.use(morgan('combined'));
