@@ -1,7 +1,7 @@
-const controller = require('../../controllers/ong');
-const validators = require('../validators/ong');
-const multer = require('multer');
+const controller = require('../../controllers/gatos');
+const validators = require('../validators/gatos');
 
+const multer = require('multer');
 const storage = multer.diskStorage({
   destination: function (req, file, cb){
     cb(null, './uploads/');
@@ -27,7 +27,6 @@ const upload = multer ({
   fileFilter : fileFilter
 });
 
-
 const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
   method: request.method,
   status: reply.statusCode,
@@ -35,21 +34,22 @@ const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
 });
 
 module.exports = (app) => {
-  app.post('/gato', upload.single('cat_image'), validators.registerValidator(), async (request, reply) => {
-    /*  #swagger.parameters['post ong object'] = {
+  app.post('/gatos', upload.single('cat_image'), validators.registerValidator(), async (request, reply) => {
+    /*  #swagger.parameters['post gatos object'] = {
             in: 'body',
             description: "New Felino values",
             schema: {
-                "$disponivel_para_adocao": "adotado",
-                "$cor_da_pelagem": "color",
-                "$possui_deficiencia": "no",
-                "$precisa_de_cuidados_especiais": "no"
-                "$sexo":"macho"
-                "$idade":"filhote"
-                "$castrado":"no"
-                "$nome":"Zeus"
-                "$testes_FIV_Felv":"não realizado"
-                "vacinas":"sim"
+                "tipo": "gato",
+                "$status": "adotado",
+                "$corPelagem": "color",
+                "$possuiDeficiencia": "no",
+                "$cuidadosEspeciais": "no",
+                "$sexo":"macho",
+                "$idade":"filhote",
+                "$castrado":"no",
+                "$name":"Zeus",
+                "$teste":"não realizado",
+                "$vacinas":"sim"
             }
     } */
     const errors = validators.validateRequest(request);
