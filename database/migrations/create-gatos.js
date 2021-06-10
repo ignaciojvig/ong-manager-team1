@@ -3,14 +3,17 @@ module.exports = {
         id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
-            allowNull: false,
             autoIncrement: true,
         },
         tipo: {
             type: Sequelize.STRING,
             allowNull: false,
         },
-        nome: {
+        status: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        name: {
             type: Sequelize.STRING,
             allowNull: true,
         },
