@@ -6,43 +6,37 @@ exports.validateRequest = (req) => {
 };
 
 exports.registerValidator = () => [
-  check('name')
+  check('nome')
     .notEmpty()
     .withMessage('name is required'),
-  check('description')
+  check('tipo')
     .notEmpty()
-    .withMessage('description is required')
-    .isLength({ max: 200 })
-    .withMessage('description must have less then 200 characters'),
-  check('email')
+    .withMessage('type is required')
+    .isLength({ max: 20 })
+    .withMessage('type must have less then 20 characters'),
+  check('possuiDeficiencia')
     .notEmpty()
-    .withMessage('email is required')
-    .isEmail()
-    .withMessage('invalid email'),
-  check('phone')
-    .optional()
-    .custom((val) => /^\([0-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}$/g.test(val))
-    .withMessage('invalid phone format'),
+    .withMessage('has a disability is required'),
+  check('cuidadosEspeciais')
+    .notEmpty()
+    .withMessage('special care is required'),
 
 ];
 
 exports.updateValidator = () => [
-  check('name')
+    check('nome')
     .notEmpty()
     .withMessage('name is required'),
-  check('description')
+  check('tipo')
     .notEmpty()
-    .withMessage('description is required')
-    .isLength({ max: 200 })
-    .withMessage('description must have less then 200 characters'),
-  check('email')
+    .withMessage('type is required')
+    .isLength({ max: 20 })
+    .withMessage('type must have less then 20 characters'),
+  check('possuiDeficiencia')
     .notEmpty()
-    .withMessage('email is required')
-    .isEmail()
-    .withMessage('invalid email'),
-  check('phone')
-    .optional()
-    .custom((val) => /^\([0-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}$/g.test(val))
-    .withMessage('invalid phone format'),
+    .withMessage('has a disability is required'),
+  check('cuidadosEspeciais')
+    .notEmpty()
+    .withMessage('special care is required'),
 
 ];

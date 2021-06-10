@@ -5,6 +5,6 @@ const Dog = require('../application/model/dog')
 
 const connection = new Sequelize(dbConfiguration);
 Ong.init(connection);
-//Dog.init(connection);
+Dog.init(connection);
 
 module.exports = connection;
