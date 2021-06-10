@@ -48,12 +48,7 @@ module.exports = {
         vacinas: {
             type: Sequelize.STRING,
             allowNull: false,
-        },
-        cat_image: {
-            type: Sequelize.STRING,
-            allowNull: false,
         }
-
     }),
 
     down: async (queryInterface) => queryInterface.dropTable('gatos'),
