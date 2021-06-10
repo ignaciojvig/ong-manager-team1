@@ -16,15 +16,15 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      // possuiDeficiencia: {
-      //     type: Sequelize.STRING,
-      //     allowNull: false,
-      // },
-      // cuidadosEspeciais: {
-      //     type: Sequelize.STRING,
-      //     allowNull: false,
-      // },
-      // corPelagem: Sequelize.STRING,
+      possuiDeficiencia: {
+          type: Sequelize.STRING,
+          allowNull: false,
+      },
+      cuidadosEspeciais: {
+          type: Sequelize.STRING,
+          allowNull: false,
+      },
+      corPelagem: Sequelize.STRING,
       sexo: Sequelize.STRING,
       idade: Sequelize.STRING,
       castrado: Sequelize.STRING,

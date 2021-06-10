@@ -12,11 +12,9 @@ exports.register = async (dog) => {
   }
 };
 
-exports.findAll = async (dog) => {
+exports.findAll = async () => {
   try {
-    const dogs = await Dog.findAll({
-      where: dog,
-    });
+    const dogs = await Dog.findAll();
     return dogs;
   } catch (err) {
     console.log(err);

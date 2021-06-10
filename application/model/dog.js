@@ -20,15 +20,15 @@ class Dog extends Model {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        // possuiDeficiencia: {
-        //   type: DataTypes.STRING,
-        //   allowNull: false,
-        // },
-        // cuidadosEspeciais: {
-        //   type: DataTypes.STRING,
-        //   allowNull: false,
-        // },
-        // corPelagem: DataTypes.STRING,
+        possuiDeficiencia: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        cuidadosEspeciais: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        corPelagem: DataTypes.STRING,
         sexo: DataTypes.STRING,
         idade: DataTypes.STRING,
         castrado: DataTypes.STRING,
@@ -37,7 +37,7 @@ class Dog extends Model {
       },
       {
         sequelize,
-        underscored: true,
+        underscored: false,
         tableName: 'dogs',
       },
     );
