@@ -12,6 +12,20 @@ exports.register = async (gatos) =>{
     }
 }
 
+exports.update = async (id, newGato) => {
+    try {
+      const gato = await Gato.findOne({ id });
+      gato.set(newGato);
+      gato.save();
+      return gato;
+    } catch (err) {
+      console.log(err);
+      const error = new Error('An error ocurred while updating cat');
+      error.statusCode = 500;
+      throw error;
+    }
+  };  
+
 exports.delete = async (id) => {
     try {
       const gato = await Gato.destroy({

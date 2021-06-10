@@ -34,7 +34,16 @@ module.exports = (app) => {
     return reply.json(response);
   });
 
-  app.delete('/gato/:id', async (request, reply) => {
+  app.put('/gatos/:id', validators.updateValidator(), async (request, reply) => {
+    const errors = validators.validateRequest(request);
+    if (errors.length > 0) {
+      return invalidRequestReply(request, reply, errors);
+    }
+    const response = await controller.put(request.params.id, request, reply);
+    return reply.json(response);
+  });
+
+  app.delete('/gatos/:id', async (request, reply) => {
     const response = await controller.delete(request.params.id, request, reply);
     return reply.json(response);
   });

@@ -53,3 +53,46 @@ exports.registerValidator = () => [
     .notEmpty()
     .withMessage('vacinas is required'),
 ];
+
+exports.updateValidator = () => [
+  check('tipo')
+    .notEmpty()
+    .withMessage('tipo is required')
+    .isLength({ max: 50 })
+    .withMessage('description must have less then 50 characters'),
+
+    check('name')
+    .optional(),
+
+    check('status')
+    .notEmpty()
+    .withMessage('status is required'),
+
+    check('possuiDeficiencia')
+    .optional(),
+
+    check('cuidadosEspeciais')
+    .optional(),
+
+    check('corPelagem')
+    .optional(),
+
+    check('sexo')
+    .notEmpty()
+    .withMessage('sexo is required'),
+
+    check('idade')
+    .notEmpty()
+    .withMessage('idade is required'),
+
+    check('castrado')
+    .notEmpty()
+    .withMessage('castrado is required'),
+
+    check('teste')
+    .notEmpty()
+    .withMessage('teste is required'),
+
+    check('vacinas')
+    .optional(),
+];
