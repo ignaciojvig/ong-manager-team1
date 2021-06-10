@@ -14,14 +14,16 @@ const start = async () => {
     app.use(express.urlencoded({
       extended: true,
     }));
-    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    app.use(`/${process.env.SWAGGER}`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
     consign()
       .include('adapters/api/routes')
       .into(app);
 
-    app.listen(3000, () => console.log('listening port 3000'));
+    
+    app.listen(process.env.PORT, () => console.log(`http://localhost:${process.env.PORT}/${process.env.SWAGGER}`));
+
   } catch (err) {
     console.log(err);
     process.exit(1);
