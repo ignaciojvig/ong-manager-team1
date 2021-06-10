@@ -58,7 +58,7 @@ class Gatos extends Model {
       },
       {
         sequelize,
-        underscored: true,
+        underscored: false,
         tableName: 'gatos',
       },
     );
