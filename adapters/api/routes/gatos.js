@@ -1,5 +1,5 @@
 const controller = require('../../controllers/gatos');
-const validators = require('../validators/ong');
+const validators = require('../validators/gatos');
 
 const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
   method: request.method,
@@ -8,23 +8,22 @@ const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
 });
 
 module.exports = (app) => {
-  app.post('/gato', validators.registerValidator(), async (request, reply) => {
-    /*  #swagger.parameters['post ong object'] = {
+  app.post('/gatos', validators.registerValidator(), async (request, reply) => {
+    /*  #swagger.parameters['post gatos object'] = {
             in: 'body',
             description: "New Felino values",
             schema: {
-                "$disponivel_para_adocao": "adotado",
-                "$cor_da_pelagem": "color",
-                "$possui_deficiencia": "no",
-                "$precisa_de_cuidados_especiais": "no"
-                "$sexo":"macho"
-                "$idade":"filhote"
-                "$castrado":"no"
-                "$nome":"Zeus"
-                "$testes_FIV_Felv":"não realizado"
-                "vacinas":"sim"
-
-
+                "tipo": "gato",
+                "$status": "adotado",
+                "$corPelagem": "color",
+                "$possuiDeficiencia": "no",
+                "$cuidadosEspeciais": "no",
+                "$sexo":"macho",
+                "$idade":"filhote",
+                "$castrado":"no",
+                "$name":"Zeus",
+                "$teste":"não realizado",
+                "$vacinas":"sim"
             }
     } */
     const errors = validators.validateRequest(request);

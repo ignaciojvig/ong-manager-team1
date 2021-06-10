@@ -3,14 +3,17 @@ module.exports = {
         id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
-            allowNull: false,
             autoIncrement: true,
         },
         tipo: {
             type: Sequelize.STRING,
             allowNull: false,
         },
-        nome: {
+        status: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        name: {
             type: Sequelize.STRING,
             allowNull: true,
         },
@@ -46,7 +49,6 @@ module.exports = {
             type: Sequelize.STRING,
             allowNull: false,
         }
-
     }),
 
     down: async (queryInterface) => queryInterface.dropTable('gatos'),
