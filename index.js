@@ -3,6 +3,7 @@ const consign = require('consign');
 const swaggerUi = require('swagger-ui-express');
 const sequelize = require('./config/connection');
 const swaggerDocument = require('./swagger_output.json');
+const morgan = require('morgan')
 
 const app = express();
 
@@ -15,8 +16,8 @@ const start = async () => {
       extended: true,
     }));
     app.use(`/${process.env.SWAGGER}`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-
+    app.use(morgan('combined'));
+    
     consign()
       .include('adapters/api/routes')
       .into(app);
@@ -31,3 +32,4 @@ const start = async () => {
 };
 start();
 module.exports = app;
+
