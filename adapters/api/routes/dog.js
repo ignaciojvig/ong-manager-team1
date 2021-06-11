@@ -9,16 +9,7 @@ const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
 
 module.exports = (app) => {
   app.post('/dog', validators.registerValidator(), async (request, reply) => {
-    /*  #swagger.parameters['post dog object'] = {
-            in: 'body',
-            description: "New dog values",
-            schema: {
-                "$name": "new dog",
-                "$description": "dog description",
-                "$email": "aaa@aaa.com",
-                "$phone": "(19) 99999-9999"
-            }
-    } */
+
     const errors = validators.validateRequest(request);
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);
@@ -38,16 +29,7 @@ module.exports = (app) => {
   });
 
   app.put('/dog/:id', validators.updateValidator(), async (request, reply) => {
-    /*  #swagger.parameters['put dog object'] = {
-            in: 'body',
-            description: "New dog values",
-            schema: {
-                "$name": "new dog",
-                "$description": "dog description",
-                "$email": "aaa@aaa.com",
-                "$phone": "(19) 99999-9999"
-            }
-    } */
+   
     const errors = validators.validateRequest(request);
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);
