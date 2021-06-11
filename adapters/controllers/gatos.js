@@ -1,7 +1,7 @@
 const gatos = require('../../application/services/gatos');
 
 exports.post = async (request) => {
-  const result = await gatos.register(request.body);
+  const result = await gatos.register(request.body, request.file.path);
   return result;
 };
 

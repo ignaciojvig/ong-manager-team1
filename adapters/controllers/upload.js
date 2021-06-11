@@ -3,11 +3,11 @@ const path = require('path');
 const crypto = require('crypto');
 
 module.exports = {
-  dest: path.resolve(__dirname, '..', 'tmp', 'uploads'),
+  dest: path.resolve(__dirname, '..', '..', 'uploads'),
 
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, path.resolve(__dirname, '..', 'tmp', 'uploads'));
+      cb(null, path.resolve(__dirname, '..', '..', 'uploads'));
     },
 
     filename: (req, file, cb) => {
@@ -34,7 +34,7 @@ module.exports = {
     if (allowedMimes.includes(file.mimetype)) {
       cb(null, true);
     } else {
-      cb(new Error('Formato de arquivo invalido!'));
+      cb(null, false);
     }
   },
 };

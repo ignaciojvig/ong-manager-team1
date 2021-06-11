@@ -6,30 +6,34 @@ class Gatos extends Model {
   static init(sequelize) {
     super.init(
       {
+        cat_image: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
         id: {
           type: DataTypes.INTEGER,
           autoIncrement: true,
           primaryKey: true,
         },
-        status:{
+        status: {
           type: DataTypes.STRING,
           allowNull: false,
         },
         tipo: {
-            type: DataTypes.STRING,
-            allowNull: false,
-          },
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
         name: {
           type: DataTypes.STRING,
           allowNull: false,
         },
         possuiDeficiencia: {
-            type: DataTypes.STRING,
-            allowNull: false,
+          type: DataTypes.STRING,
+          allowNull: false,
         },
         cuidadosEspeciais: {
-            type: DataTypes.STRING,
-            allowNull: false,
+          type: DataTypes.STRING,
+          allowNull: false,
         },
         corPelagem: DataTypes.STRING,
         sexo: DataTypes.STRING,
