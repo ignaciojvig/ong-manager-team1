@@ -223,65 +223,190 @@
     },
     "/dog": {
       "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
+      "tags": [],
+      "description": "",
+      "parameters": [
+        {
+          "name": "post dog object",
+          "in": "body",
+          "description": "New dog values",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "tipo": {
+                "type": "string",
+                "example": "pitbull"
+              },
+              "nome": {
+                "type": "string",
+                "example": "snoppy"
+              },
+              "possuiDeficiencia": {
+                "type": "string",
+                "example": "nao"
+              },
+              "cuidadosEspeciais": {
+                "type": "string",
+                "example": "alergia a perfume"
+              },
+              "corPelagem": {
+                "type": "string",
+                "example": "caramelo"
+              },
+              "sexo": {
+                "type": "string",
+                "example": "masculino"
+              },
+              "idade": {
+                "type": "string",
+                "example": "5 anos"
+              },
+              "castrado": {
+                "type": "string",
+                "example": "nao"
+              },
+              "teste": {
+                "type": "string",
+                "example": "teste"
+              },
+              "vacinas": {
+                "type": "string",
+                "example": "raiva"
+              }
+            },
+            "required": [
+              "tipo",
+              "nome",
+              "possuiDeficiencia",
+              "cuidadosEspeciais",
+              "corPelagem",
+              "sexo",
+              "idade",
+              "castrado",
+              "teste",
+              "vacinas"
+            ]
           }
         }
+      ],
+      "responses": {
+        "400": {
+          "description": "Bad Request"
+        }
+      }
       },
       "get": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
+      "tags": [],
+      "description": "",
+      "parameters": [],
+      "responses": {}
       }
     },
     "/dog/{id}": {
       "get": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {}
+      "tags": [],
+      "description": "",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {}
       },
       "put": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
+      "tags": [],
+      "description": "",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "post dog object",
+          "in": "body",
+          "description": "New dog values",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "tipo": {
+                "type": "string",
+                "example": "pitbull"
+              },
+              "nome": {
+                "type": "string",
+                "example": "snoppy"
+              },
+              "possuiDeficiencia": {
+                "type": "string",
+                "example": "nao"
+              },
+              "cuidadosEspeciais": {
+                "type": "string",
+                "example": "alergia a perfume"
+              },
+              "corPelagem": {
+                "type": "string",
+                "example": "caramelo"
+              },
+              "sexo": {
+                "type": "string",
+                "example": "masculino"
+              },
+              "idade": {
+                "type": "string",
+                "example": "5 anos"
+              },
+              "castrado": {
+                "type": "string",
+                "example": "nao"
+              },
+              "teste": {
+                "type": "string",
+                "example": "teste"
+              },
+              "vacinas": {
+                "type": "string",
+                "example": "raiva"
+              }
+            },
+            "required": [
+              "tipo",
+              "nome",
+              "possuiDeficiencia",
+              "cuidadosEspeciais",
+              "corPelagem",
+              "sexo",
+              "idade",
+              "castrado",
+              "teste",
+              "vacinas"
+            ]
           }
         }
+      ],
+      "responses": {
+        "400": {
+          "description": "Bad Request"
+        }
+      }
       },
       "delete": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {}
+      "tags": [],
+      "description": "",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {}
       }
     }
   },
