@@ -27,6 +27,8 @@ module.exports = (app) => {
     return reply.json(response);
   });
 
+ 
+
   app.get('/ong', async (request, reply) => {
     const response = await controller.get(request, reply);
     return reply.json(response);

@@ -54,6 +54,7 @@ exports.update = async (id, newOng) => {
     error.statusCode = 500;
     throw error;
   }
+  
 };
 
 exports.delete = async (id) => {
