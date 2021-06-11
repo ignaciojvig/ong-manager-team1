@@ -11,32 +11,38 @@ class Gatos extends Model {
           autoIncrement: true,
           primaryKey: true,
         },
-        status:{
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
+        status: DataTypes.STRING,
         tipo: {
             type: DataTypes.STRING,
             allowNull: false,
           },
-        name: {
+        name: DataTypes.STRING,
+        possuiDeficiencia: DataTypes.STRING,
+        cuidadosEspeciais: DataTypes.STRING,
+        corPelagem: {
           type: DataTypes.STRING,
           allowNull: false,
-        },
-        possuiDeficiencia: {
+      },
+        sexo: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        idade: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        castrado: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        teste: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+        vacinas: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        cuidadosEspeciais: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        corPelagem: DataTypes.STRING,
-        sexo: DataTypes.STRING,
-        idade: DataTypes.STRING,
-        castrado: DataTypes.STRING,
-        teste: DataTypes.STRING,
-        vacinas: DataTypes.STRING,
       },
       {
         sequelize,

@@ -23,7 +23,7 @@ module.exports = {
         },
         cuidadosEspeciais: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         corPelagem: {
             type: Sequelize.STRING,
@@ -58,7 +58,6 @@ module.exports = {
             allowNull: false,
         },
     }),
-
 
     down: async (queryInterface) => queryInterface.dropTable('gatos'),
 };

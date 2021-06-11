@@ -200,16 +200,49 @@
                 }
               },
               "required": [
-                "status",
+                "tipo",
                 "corPelagem",
-                "possuiDeficiencia",
-                "cuidadosEspeciais",
                 "sexo",
                 "idade",
                 "castrado",
-                "name",
                 "teste",
                 "vacinas"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/gatos/{id}/status": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "put gatos object",
+            "in": "body",
+            "description": "Update adoption cat",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "disponivel"
+                }
+              },
+              "required": [
+                "status"
               ]
             }
           }
@@ -233,23 +266,65 @@
             "type": "string"
           },
           {
-            "name": "put gatos object",
+            "name": "put cat object",
             "in": "body",
-            "description": "Update adoption cat",
+            "description": "New cat values",
             "schema": {
               "type": "object",
               "properties": {
-                "id": {
+                "tipo": {
                   "type": "string",
-                  "example": "1"
+                  "example": "gato"
                 },
                 "status": {
                   "type": "string",
-                  "example": "disponivel"
+                  "example": "adotado"
+                },
+                "corPelagem": {
+                  "type": "string",
+                  "example": "color"
+                },
+                "possuiDeficiencia": {
+                  "type": "string",
+                  "example": "no"
+                },
+                "cuidadosEspeciais": {
+                  "type": "string",
+                  "example": "no"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "macho"
+                },
+                "idade": {
+                  "type": "string",
+                  "example": "filhote"
+                },
+                "castrado": {
+                  "type": "string",
+                  "example": "no"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Zeus"
+                },
+                "teste": {
+                  "type": "string",
+                  "example": "não realizado"
+                },
+                "vacinas": {
+                  "type": "string",
+                  "example": "sim"
                 }
               },
               "required": [
-                "status"
+                "tipo",
+                "corPelagem",
+                "sexo",
+                "idade",
+                "castrado",
+                "teste",
+                "vacinas"
               ]
             }
           }
@@ -259,6 +334,19 @@
             "description": "Bad Request"
           }
         }
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
       }
     }
   },
