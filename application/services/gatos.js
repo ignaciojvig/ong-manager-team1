@@ -9,3 +9,18 @@ exports.register = async (gatos) =>{
         throw error;
     }
 }
+
+exports.update = async (id, status)=>{
+    try{
+        
+        const gato = await Gato.findOne({ id });
+        gato.set(status);
+        gato.save();
+        return gato;
+    } catch (err) {
+        console.log(err);
+        const error = new Error('An error ocurred while updating gato');
+        error.statusCode = 500;
+        throw error;
+    }
+}

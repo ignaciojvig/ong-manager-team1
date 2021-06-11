@@ -33,4 +33,21 @@ module.exports = (app) => {
     const response = await controller.post(request, reply);
     return reply.json(response);
   });
+  app.put('/gatos/:id',validators.updateValidator(),async(request,reply)=>{
+    /* #swagger.parameters['put gatos object']  = {
+      in:'body',
+      description:"Update adoption cat",
+      schema:{
+        "id":"1",
+        "$status":"disponivel"
+      }
+    }*/
+    const errors = validators.validateRequest(request);
+    if(errors.length>0){
+      return invalidRequestReply(request, reply, errors)
+
+    }
+    const response = await controller.put(request.params.id,request, reply)
+    return reply.json(response);
+  })
 }
