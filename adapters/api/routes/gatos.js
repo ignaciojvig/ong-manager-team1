@@ -34,6 +34,12 @@ module.exports = (app) => {
     return reply.json(response);
   });
 
+  app.get('/gato/:status', async (request, reply) => {
+    const response = await controller.getByStatus(request.params.status, request, reply);
+    return reply.json(response);
+});
+
+
   app.put('/gatos/:id', validators.updateValidator(), async (request, reply) => {
     /*  #swagger.parameters['put cat object'] = {
             in: 'body',

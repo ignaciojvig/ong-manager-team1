@@ -15,6 +15,11 @@ exports.getById = async (id) => {
   return result;
 };
 
+exports.getByStatus= async (status) => {
+  const result = await findByStatus(status);
+  return result;
+};
+
 exports.put = async (id, request) => {
   const result = await gatos.update(id, request.body);
   return result;
