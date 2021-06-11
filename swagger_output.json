@@ -52,11 +52,7 @@
             }
           }
         ],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          }
-        }
+        "responses": {}
       },
       "get": {
         "tags": [],
@@ -122,11 +118,7 @@
             }
           }
         ],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          }
-        }
+        "responses": {}
       },
       "delete": {
         "tags": [],
@@ -200,6 +192,7 @@
                 }
               },
               "required": [
+                "tipo",
                 "status",
                 "corPelagem",
                 "possuiDeficiencia",

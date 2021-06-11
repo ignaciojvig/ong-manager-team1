@@ -1,15 +1,10 @@
 const { DataTypes } = require('sequelize');
-
 const Model = require('./baseModel');
 
 class Gatos extends Model {
   static init(sequelize) {
     super.init(
       {
-        cat_image: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
         id: {
           type: DataTypes.INTEGER,
           autoIncrement: true,
@@ -35,12 +30,34 @@ class Gatos extends Model {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        corPelagem: DataTypes.STRING,
-        sexo: DataTypes.STRING,
-        idade: DataTypes.STRING,
-        castrado: DataTypes.STRING,
-        teste: DataTypes.STRING,
-        vacinas: DataTypes.STRING,
+        corPelagem: {
+          type: DataTypes.STRING,
+          allowNull: true,
+        },
+        sexo: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        idade:{
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        castrado: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        teste:{
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        vacinas: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        cat_image: {
+          type: DataTypes.STRING,
+          allowNull: true,
+        },
       },
       {
         sequelize,
