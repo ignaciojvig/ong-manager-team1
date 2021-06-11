@@ -241,6 +241,10 @@
                 "type": "string",
                 "example": "snoppy"
               },
+              "status":{
+                "type": "string",
+                "example": "adotado"
+              },
               "possuiDeficiencia": {
                 "type": "string",
                 "example": "nao"
@@ -340,6 +344,10 @@
               "nome": {
                 "type": "string",
                 "example": "snoppy"
+              },
+              "status": {
+                "type": "string",
+                "example": "adotado"
               },
               "possuiDeficiencia": {
                 "type": "string",
