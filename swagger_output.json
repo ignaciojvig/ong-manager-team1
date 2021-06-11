@@ -220,6 +220,104 @@
           }
         }
       }
+    },
+    "/gatos/{id}": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "put cat object",
+            "in": "body",
+            "description": "New cat values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "example": "gato"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "adotado"
+                },
+                "corPelagem": {
+                  "type": "string",
+                  "example": "color"
+                },
+                "possuiDeficiencia": {
+                  "type": "string",
+                  "example": "no"
+                },
+                "cuidadosEspeciais": {
+                  "type": "string",
+                  "example": "no"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "macho"
+                },
+                "idade": {
+                  "type": "string",
+                  "example": "filhote"
+                },
+                "castrado": {
+                  "type": "string",
+                  "example": "no"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Zeus"
+                },
+                "teste": {
+                  "type": "string",
+                  "example": "não realizado"
+                },
+                "vacinas": {
+                  "type": "string",
+                  "example": "sim"
+                }
+              },
+              "required": [
+                "status",
+                "corPelagem",
+                "possuiDeficiencia",
+                "cuidadosEspeciais",
+                "sexo",
+                "idade",
+                "castrado",
+                "name",
+                "teste",
+                "vacinas"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
     }
   },
   "definitions": {}

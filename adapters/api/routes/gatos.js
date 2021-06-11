@@ -35,6 +35,24 @@ module.exports = (app) => {
   });
 
   app.put('/gatos/:id', validators.updateValidator(), async (request, reply) => {
+    /*  #swagger.parameters['put cat object'] = {
+            in: 'body',
+            description: "New cat values",
+            schema: {
+                "tipo": "gato",
+                "$status": "adotado",
+                "$corPelagem": "color",
+                "$possuiDeficiencia": "no",
+                "$cuidadosEspeciais": "no",
+                "$sexo":"macho",
+                "$idade":"filhote",
+                "$castrado":"no",
+                "$name":"Zeus",
+                "$teste":"não realizado",
+                "$vacinas":"sim"
+            }
+    } */
+    
     const errors = validators.validateRequest(request);
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);

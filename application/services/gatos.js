@@ -14,7 +14,11 @@ exports.register = async (gatos) =>{
 
 exports.update = async (id, newGato) => {
     try {
-      const gato = await Gato.findOne({ id });
+      const gato = await Gato.findOne({ 
+          where: {
+            id,
+          }, 
+        });
       gato.set(newGato);
       gato.save();
       return gato;
