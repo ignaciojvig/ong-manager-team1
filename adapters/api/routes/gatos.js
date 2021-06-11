@@ -15,7 +15,7 @@ module.exports = (app) => {
             in: 'body',
             description: "New Felino values",
             schema: {
-                "tipo": "gato",
+                "$tipo": "gato",
                 "$status": "adotado",
                 "$corPelagem": "color",
                 "$possuiDeficiencia": "no",
@@ -32,11 +32,6 @@ module.exports = (app) => {
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);
     }
-
-    const upload = app.post('/upload', .single('cat_image'), function (req, res, next) {
-      const response = req.file;
-      return  res.status(200).send(response);
-    });
 
     const response = await controller.post(request, reply);
     return reply.json(response);
