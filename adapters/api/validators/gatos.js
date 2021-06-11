@@ -9,25 +9,61 @@ exports.registerValidator = () => [
 
     check('tipo')
     .notEmpty()
-    .withMessage('tipo is required')
-    .isLength({ max: 50 })
-    .withMessage('description must have less then 50 characters'),
+    .withMessage('tipo is required'),
 
     check('name')
-    .notEmpty()
-    .withMessage('name is required'),
+    .optional(),
 
     check('status')
-    .notEmpty()
-    .withMessage('status is required'),
+    .optional(),
 
     check('possuiDeficiencia')
-    .notEmpty()
-    .withMessage('possuiDeficiencia is required'),
+    .optional(),
 
     check('cuidadosEspeciais')
+    .optional(),
+
+    check('corPelagem')
     .notEmpty()
-    .withMessage('cuidadosEspeciais is required'),
+    .withMessage('corPelagem is required'),
+
+    check('sexo')
+    .notEmpty()
+    .withMessage('sexo is required'),
+
+    check('idade')
+    .notEmpty()
+    .withMessage('idade is required'),
+
+    check('castrado')
+    .notEmpty()
+    .withMessage('castrado is required'),
+
+    check('teste')
+    .notEmpty()
+    .withMessage('teste is required'),
+
+    check('vacinas')
+    .notEmpty()
+    .withMessage('vacinas is required'),
+];
+
+exports.updateValidator = () => [
+  check('tipo')
+    .notEmpty()
+    .withMessage('tipo is required'),
+
+    check('name')
+    .optional(),
+
+    check('status')
+    .optional(),
+
+    check('possuiDeficiencia')
+    .optional(),
+
+    check('cuidadosEspeciais')
+    .optional(),
 
     check('corPelagem')
     .notEmpty()

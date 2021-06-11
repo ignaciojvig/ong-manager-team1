@@ -23,7 +23,7 @@ module.exports = {
         },
         cuidadosEspeciais: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         corPelagem: {
             type: Sequelize.STRING,
