@@ -200,14 +200,11 @@
                 }
               },
               "required": [
-                "status",
+                "tipo",
                 "corPelagem",
-                "possuiDeficiencia",
-                "cuidadosEspeciais",
                 "sexo",
                 "idade",
                 "castrado",
-                "name",
                 "teste",
                 "vacinas"
               ]
@@ -285,14 +282,11 @@
                 }
               },
               "required": [
-                "status",
+                "tipo",
                 "corPelagem",
-                "possuiDeficiencia",
-                "cuidadosEspeciais",
                 "sexo",
                 "idade",
                 "castrado",
-                "name",
                 "teste",
                 "vacinas"
               ]

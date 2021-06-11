@@ -13,15 +13,15 @@ module.exports = (app) => {
             in: 'body',
             description: "New Felino values",
             schema: {
-                "tipo": "gato",
-                "$status": "adotado",
+                "$tipo": "gato",
+                "status": "adotado",
                 "$corPelagem": "color",
-                "$possuiDeficiencia": "no",
-                "$cuidadosEspeciais": "no",
+                "possuiDeficiencia": "no",
+                "cuidadosEspeciais": "no",
                 "$sexo":"macho",
                 "$idade":"filhote",
                 "$castrado":"no",
-                "$name":"Zeus",
+                "name":"Zeus",
                 "$teste":"não realizado",
                 "$vacinas":"sim"
             }
@@ -39,15 +39,15 @@ module.exports = (app) => {
             in: 'body',
             description: "New cat values",
             schema: {
-                "tipo": "gato",
-                "$status": "adotado",
+                "$tipo": "gato",
+                "status": "adotado",
                 "$corPelagem": "color",
-                "$possuiDeficiencia": "no",
-                "$cuidadosEspeciais": "no",
+                "possuiDeficiencia": "no",
+                "cuidadosEspeciais": "no",
                 "$sexo":"macho",
                 "$idade":"filhote",
                 "$castrado":"no",
-                "$name":"Zeus",
+                "name":"Zeus",
                 "$teste":"não realizado",
                 "$vacinas":"sim"
             }

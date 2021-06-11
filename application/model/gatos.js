@@ -11,26 +11,14 @@ class Gatos extends Model {
           autoIncrement: true,
           primaryKey: true,
         },
-        status:{
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
+        status: DataTypes.STRING,
         tipo: {
             type: DataTypes.STRING,
             allowNull: false,
           },
-        name: {
-          type: DataTypes.STRING,
-          allowNull: true,
-        },
-        possuiDeficiencia: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        cuidadosEspeciais: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        name: DataTypes.STRING,
+        possuiDeficiencia: DataTypes.STRING,
+        cuidadosEspeciais: DataTypes.STRING,
         corPelagem: {
           type: DataTypes.STRING,
           allowNull: false,
