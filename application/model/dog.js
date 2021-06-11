@@ -9,8 +9,11 @@ class Dog extends Model {
         id: {
           type: DataTypes.INTEGER,
           autoIncrement: true,
-          allowNull: false,
           primaryKey: true,
+        },
+        status:{
+          type: DataTypes.STRING,
+          allowNull: false,
         },
         tipo: {
           type: DataTypes.STRING,
