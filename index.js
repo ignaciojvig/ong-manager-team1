@@ -24,7 +24,11 @@ const start = async () => {
       .into(app);
 
     
-    app.listen(process.env.PORT, () => console.log(`http://localhost:${process.env.PORT}/${process.env.SWAGGER}`));
+    app.listen(process.env.PORT, async () => {
+      const swaggerpath = `http://localhost:${process.env.PORT}/${process.env.SWAGGER}`
+      console.log(swaggerpath)
+      await open(swaggerpath)
+    });
 
   } catch (err) {
     console.log(err);
@@ -32,11 +36,7 @@ const start = async () => {
   }
 };
 start();
- 
-(async () => {
-    await open('http://localhost:3000/api-docs');
-    console.log('http://localhost:3000/api-docs');
-})();
+
 
 module.exports = app;
 
