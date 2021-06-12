@@ -224,21 +224,6 @@
         "responses": {}
       }
     },
-    "/gatos/{status}": {
-      "get": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "status",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {}
-      }
-    },
     "/gatos/{id}/status": {
       "put": {
         "tags": [],
@@ -273,6 +258,21 @@
             "description": "Bad Request"
           }
         }
+      }
+    },
+    "/gatos/{status}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
       }
     },
     "/gatos/{id}": {
@@ -340,6 +340,204 @@
               },
               "required": [
                 "tipo",
+                "corPelagem",
+                "sexo",
+                "idade",
+                "castrado",
+                "teste",
+                "vacinas"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/dog": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "post dog object",
+            "in": "body",
+            "description": "New dog values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "example": "maltes"
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "zeus"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "disponivel para adocao"
+                },
+                "possuiDeficiencia": {
+                  "type": "string",
+                  "example": "nao"
+                },
+                "cuidadosEspeciais": {
+                  "type": "string",
+                  "example": "nao"
+                },
+                "corPelagem": {
+                  "type": "string",
+                  "example": "preto"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "masculino"
+                },
+                "idade": {
+                  "type": "string",
+                  "example": "7 meses"
+                },
+                "castrado": {
+                  "type": "string",
+                  "example": "sim"
+                },
+                "teste": {
+                  "type": "string",
+                  "example": "teste"
+                },
+                "vacinas": {
+                  "type": "string",
+                  "example": "raiva"
+                }
+              },
+              "required": [
+                "tipo",
+                "nome",
+                "status",
+                "possuiDeficiencia",
+                "cuidadosEspeciais",
+                "corPelagem",
+                "sexo",
+                "idade",
+                "castrado",
+                "teste",
+                "vacinas"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/dog/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "put dog object",
+            "in": "body",
+            "description": "update dog values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "example": "maltes"
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "zeus"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "disponivel para adocao"
+                },
+                "possuiDeficiencia": {
+                  "type": "string",
+                  "example": "nao"
+                },
+                "cuidadosEspeciais": {
+                  "type": "string",
+                  "example": "nao"
+                },
+                "corPelagem": {
+                  "type": "string",
+                  "example": "preto"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "masculino"
+                },
+                "idade": {
+                  "type": "string",
+                  "example": "7 meses"
+                },
+                "castrado": {
+                  "type": "string",
+                  "example": "sim"
+                },
+                "teste": {
+                  "type": "string",
+                  "example": "teste"
+                },
+                "vacinas": {
+                  "type": "string",
+                  "example": "raiva"
+                }
+              },
+              "required": [
+                "tipo",
+                "nome",
+                "status",
+                "possuiDeficiencia",
+                "cuidadosEspeciais",
                 "corPelagem",
                 "sexo",
                 "idade",
@@ -496,202 +694,6 @@
           }
         ],
         "responses": {}
-      }
-    },
-    "/dog": {
-      "post": {
-      "tags": [],
-      "description": "",
-      "parameters": [
-        {
-          "name": "post dog object",
-          "in": "body",
-          "description": "New dog values",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "tipo": {
-                "type": "string",
-                "example": "pitbull"
-              },
-              "nome": {
-                "type": "string",
-                "example": "snoppy"
-              },
-              "status":{
-                "type": "string",
-                "example": "adotado"
-              },
-              "possuiDeficiencia": {
-                "type": "string",
-                "example": "nao"
-              },
-              "cuidadosEspeciais": {
-                "type": "string",
-                "example": "alergia a perfume"
-              },
-              "corPelagem": {
-                "type": "string",
-                "example": "caramelo"
-              },
-              "sexo": {
-                "type": "string",
-                "example": "masculino"
-              },
-              "idade": {
-                "type": "string",
-                "example": "5 anos"
-              },
-              "castrado": {
-                "type": "string",
-                "example": "nao"
-              },
-              "teste": {
-                "type": "string",
-                "example": "teste"
-              },
-              "vacinas": {
-                "type": "string",
-                "example": "raiva"
-              }
-            },
-            "required": [
-              "tipo",
-              "nome",
-              "possuiDeficiencia",
-              "cuidadosEspeciais",
-              "corPelagem",
-              "sexo",
-              "idade",
-              "castrado",
-              "teste",
-              "vacinas"
-            ]
-          }
-        }
-      ],
-      "responses": {
-        "400": {
-          "description": "Bad Request"
-        }
-      }
-      },
-      "get": {
-      "tags": [],
-      "description": "",
-      "parameters": [],
-      "responses": {}
-      }
-    },
-    "/dog/{id}": {
-      "get": {
-      "tags": [],
-      "description": "",
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "responses": {}
-      },
-      "put": {
-      "tags": [],
-      "description": "",
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "name": "post dog object",
-          "in": "body",
-          "description": "New dog values",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "tipo": {
-                "type": "string",
-                "example": "pitbull"
-              },
-              "nome": {
-                "type": "string",
-                "example": "snoppy"
-              },
-              "status": {
-                "type": "string",
-                "example": "adotado"
-              },
-              "possuiDeficiencia": {
-                "type": "string",
-                "example": "nao"
-              },
-              "cuidadosEspeciais": {
-                "type": "string",
-                "example": "alergia a perfume"
-              },
-              "corPelagem": {
-                "type": "string",
-                "example": "caramelo"
-              },
-              "sexo": {
-                "type": "string",
-                "example": "masculino"
-              },
-              "idade": {
-                "type": "string",
-                "example": "5 anos"
-              },
-              "castrado": {
-                "type": "string",
-                "example": "nao"
-              },
-              "teste": {
-                "type": "string",
-                "example": "teste"
-              },
-              "vacinas": {
-                "type": "string",
-                "example": "raiva"
-              }
-            },
-            "required": [
-              "tipo",
-              "nome",
-              "possuiDeficiencia",
-              "cuidadosEspeciais",
-              "corPelagem",
-              "sexo",
-              "idade",
-              "castrado",
-              "teste",
-              "vacinas"
-            ]
-          }
-        }
-      ],
-      "responses": {
-        "400": {
-          "description": "Bad Request"
-        }
-      }
-      },
-      "delete": {
-      "tags": [],
-      "description": "",
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "responses": {}
       }
     }
   },

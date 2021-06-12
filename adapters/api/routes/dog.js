@@ -9,7 +9,23 @@ const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
 
 module.exports = (app) => {
   app.post('/dog', validators.registerValidator(), async (request, reply) => {
-
+    /*  #swagger.parameters['post dog object'] = {
+            in: 'body',
+            description: "New dog values",
+            schema: {
+                "$tipo": "maltes",
+                "$nome": "zeus",
+                "$status": "disponivel para adocao",
+                "$possuiDeficiencia": "nao",
+                "$cuidadosEspeciais": "nao",
+                "$corPelagem": "preto",
+                "$sexo": "masculino",
+                "$idade": "7 meses",
+                "$castrado": "sim",
+                "$teste": "teste",
+                "$vacinas": "raiva",
+            }
+    } */
     const errors = validators.validateRequest(request);
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);
@@ -29,7 +45,23 @@ module.exports = (app) => {
   });
 
   app.put('/dog/:id', validators.updateValidator(), async (request, reply) => {
-   
+   /*  #swagger.parameters['put dog object'] = {
+            in: 'body',
+            description: "update dog values",
+            schema: {
+                "$tipo": "maltes",
+                "$nome": "zeus",
+                "$status": "disponivel para adocao",
+                "$possuiDeficiencia": "nao",
+                "$cuidadosEspeciais": "nao",
+                "$corPelagem": "preto",
+                "$sexo": "masculino",
+                "$idade": "7 meses",
+                "$castrado": "sim",
+                "$teste": "teste",
+                "$vacinas": "raiva",
+            }
+    } */
     const errors = validators.validateRequest(request);
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);
