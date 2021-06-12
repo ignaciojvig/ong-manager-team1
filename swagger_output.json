@@ -142,6 +142,144 @@
         "responses": {}
       }
     },
+    "/veterinario": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "post vet object",
+            "in": "body",
+            "description": "New vet values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "type": "string",
+                  "example": "Tobias Carvalho"
+                },
+                "crmv": {
+                  "type": "string",
+                  "example": "1234567"
+                },
+                "cpf": {
+                  "type": "string",
+                  "example": "12345678910"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "exemplo@exemplo.com"
+                },
+                "telefone": {
+                  "type": "string",
+                  "example": "(19) 99999-9999"
+                }
+              },
+              "required": [
+                "nome",
+                "crmv",
+                "cpf",
+                "email",
+                "telefone"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/veterinario/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "put vet object",
+            "in": "body",
+            "description": "Update vet values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "type": "string",
+                  "example": "Tobias Carvalho"
+                },
+                "crmv": {
+                  "type": "string",
+                  "example": "1234567"
+                },
+                "cpf": {
+                  "type": "string",
+                  "example": "12345678910"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "exemplo@exemplo.com"
+                },
+                "telefone": {
+                  "type": "string",
+                  "example": "(19) 99999-9999"
+                }
+              },
+              "required": [
+                "nome",
+                "crmv",
+                "cpf",
+                "email",
+                "telefone"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
     "/gatos": {
       "post": {
         "tags": [],
