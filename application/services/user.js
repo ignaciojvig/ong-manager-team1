@@ -1,7 +1,13 @@
 const User = require('../model/user');
+const crypto = require('crypto');
 
 exports.register = async (user) => {
     try {
+      const new_password = crypto
+      .createHash('md5')
+      .update(user.password)
+      .digest('hex');
+      user.password = new_password;
       const newUser = await User.create(user);
       return newUser;
     } catch (err) {
