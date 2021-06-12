@@ -16,10 +16,10 @@ class Veterinario extends Model {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        crmv: DataTypes.NUMBER,
-        cpf: DataTypes.NUMBER,
+        crmv: DataTypes.STRING,
+        cpf: DataTypes.STRING,
         email: DataTypes.STRING,
-        telefone: DataTypes.NUMBER,
+        telefone: DataTypes.STRING,
       },
       {
         sequelize,
