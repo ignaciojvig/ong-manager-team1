@@ -4,6 +4,7 @@ const swaggerUi = require('swagger-ui-express');
 const sequelize = require('./config/connection');
 const swaggerDocument = require('./swagger_output.json');
 const morgan = require('morgan')
+const open = require('open');
 
 const app = express();
 
@@ -23,7 +24,11 @@ const start = async () => {
       .into(app);
 
     
-    app.listen(process.env.PORT, () => console.log(`http://localhost:${process.env.PORT}/${process.env.SWAGGER}`));
+    app.listen(process.env.PORT, async () => {
+      const swaggerpath = `http://localhost:${process.env.PORT}/${process.env.SWAGGER}`
+      console.log(swaggerpath)
+      await open(swaggerpath)
+    });
 
   } catch (err) {
     console.log(err);
@@ -31,5 +36,7 @@ const start = async () => {
   }
 };
 start();
+
+
 module.exports = app;
 
