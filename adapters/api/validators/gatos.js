@@ -90,7 +90,8 @@ exports.updateValidator = () => [
     .withMessage('vacinas is required'),
 ];
 
-exports.updateValidator = () => [
+exports.updateValidatorStatus = () => [
   check('status')
-  .notEmpty()
+  .notEmpty(),
+
 ];
