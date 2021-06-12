@@ -507,6 +507,332 @@
         ],
         "responses": {}
       }
+    },
+    "/dog": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "post dog object",
+            "in": "body",
+            "description": "New dog values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "example": "maltes"
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "zeus"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "disponivel para adocao"
+                },
+                "possuiDeficiencia": {
+                  "type": "string",
+                  "example": "nao"
+                },
+                "cuidadosEspeciais": {
+                  "type": "string",
+                  "example": "nao"
+                },
+                "corPelagem": {
+                  "type": "string",
+                  "example": "preto"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "masculino"
+                },
+                "idade": {
+                  "type": "string",
+                  "example": "7 meses"
+                },
+                "castrado": {
+                  "type": "string",
+                  "example": "sim"
+                },
+                "teste": {
+                  "type": "string",
+                  "example": "teste"
+                },
+                "vacinas": {
+                  "type": "string",
+                  "example": "raiva"
+                }
+              },
+              "required": [
+                "tipo",
+                "nome",
+                "status",
+                "possuiDeficiencia",
+                "cuidadosEspeciais",
+                "corPelagem",
+                "sexo",
+                "idade",
+                "castrado",
+                "teste",
+                "vacinas"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/dog/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "put dog object",
+            "in": "body",
+            "description": "update dog values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "example": "maltes"
+                },
+                "nome": {
+                  "type": "string",
+                  "example": "zeus"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "disponivel para adocao"
+                },
+                "possuiDeficiencia": {
+                  "type": "string",
+                  "example": "nao"
+                },
+                "cuidadosEspeciais": {
+                  "type": "string",
+                  "example": "nao"
+                },
+                "corPelagem": {
+                  "type": "string",
+                  "example": "preto"
+                },
+                "sexo": {
+                  "type": "string",
+                  "example": "masculino"
+                },
+                "idade": {
+                  "type": "string",
+                  "example": "7 meses"
+                },
+                "castrado": {
+                  "type": "string",
+                  "example": "sim"
+                },
+                "teste": {
+                  "type": "string",
+                  "example": "teste"
+                },
+                "vacinas": {
+                  "type": "string",
+                  "example": "raiva"
+                }
+              },
+              "required": [
+                "tipo",
+                "nome",
+                "status",
+                "possuiDeficiencia",
+                "cuidadosEspeciais",
+                "corPelagem",
+                "sexo",
+                "idade",
+                "castrado",
+                "teste",
+                "vacinas"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "post user object",
+            "in": "body",
+            "description": "New user values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "user name"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "new user"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "aaa@aaa.com.br"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "password"
+                }
+              },
+              "required": [
+                "username",
+                "name",
+                "email",
+                "password"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "put user object",
+            "in": "body",
+            "description": "New user values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "user name"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "new user"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "aaa@aaa.com.br"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "password"
+                }
+              },
+              "required": [
+                "username",
+                "name",
+                "email",
+                "password"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
     }
   },
   "definitions": {}
