@@ -1,4 +1,5 @@
 const gatos = require('../../adapters/api/routes/gatos');
+const Gatos = require('../model/gatos');
 const Gato = require('../model/gatos')
 
 exports.register = async (gatos) =>{
@@ -6,7 +7,6 @@ exports.register = async (gatos) =>{
         const newGato = await Gato.create(gatos);
         return newGato;
     }catch (erro){
-      console.log(erro)
         const error = new Error("Deu ruim na criacao")
         throw error;
     }
@@ -48,7 +48,21 @@ exports.update = async (id, newGato) => {
       error.statusCode = 500;
       throw error;
     }
-  };  
+  }; 
+  
+  exports.findAll = async (gato) => {
+    try {
+      const gatos = await Gato.findAll({
+        where: gato,
+      });
+      return gatos;
+    } catch (err) {
+      console.log(err);
+      const error = new Error('An error ocurred while finding cats');
+      error.statusCode = 500;
+      throw error;
+    }
+  };
 
 exports.delete = async (id) => {
     try {
