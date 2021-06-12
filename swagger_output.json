@@ -216,6 +216,27 @@
             "description": "Bad Request"
           }
         }
+      },
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/gatos/{status}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
       }
     },
     "/gatos/{id}/status": {

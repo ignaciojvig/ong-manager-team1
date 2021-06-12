@@ -50,6 +50,17 @@ module.exports = (app) => {
     return reply.json(response);
   })
 
+  app.get('/gatos', async (request, reply) => {
+    const response = await controller.get(request, reply);
+    return reply.json(response);
+  });
+
+  app.get('/gatos/:status', async (request, reply) => {
+    const response = await controller.getByStatus(request.params.status, request, reply);
+    return reply.json(response);
+  });
+
+
   app.put('/gatos/:id', validators.updateValidator(), async (request, reply) => {
     /*  #swagger.parameters['put cat object'] = {
             in: 'body',
@@ -68,7 +79,7 @@ module.exports = (app) => {
                 "$vacinas":"sim"
             }
     } */
-    
+
     const errors = validators.validateRequest(request);
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);

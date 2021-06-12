@@ -1,3 +1,5 @@
+const gatos = require('../../adapters/api/routes/gatos');
+const Gatos = require('../model/gatos');
 const Gato = require('../model/gatos')
 
 exports.register = async (gatos) =>{
@@ -9,6 +11,27 @@ exports.register = async (gatos) =>{
         throw error;
     }
 }
+
+exports.getByStatus= async (status) => {
+  const result = await gatos.findByStatus(status);
+  return result;
+}
+findByStatus = async status => {
+    try {
+      const gatinho = await Gato.findAll({
+        where: {
+          status,
+        },
+      });
+      return gatinho;
+    } catch (err) {
+      console.log(err);
+      const error = new Error('An error ocurred while finding ong by status');
+      error.statusCode = 500;
+      throw error;
+    }
+  };
+
 exports.update = async (id, newGato) => {
     try {
       const gato = await Gato.findOne({ 
@@ -25,7 +48,21 @@ exports.update = async (id, newGato) => {
       error.statusCode = 500;
       throw error;
     }
-  };  
+  }; 
+  
+  exports.findAll = async (gato) => {
+    try {
+      const gatos = await Gato.findAll({
+        where: gato,
+      });
+      return gatos;
+    } catch (err) {
+      console.log(err);
+      const error = new Error('An error ocurred while finding cats');
+      error.statusCode = 500;
+      throw error;
+    }
+  };
 
 exports.delete = async (id) => {
     try {
@@ -41,4 +78,4 @@ exports.delete = async (id) => {
       error.statusCode = 500;
       throw error;
     }
-}
+};
