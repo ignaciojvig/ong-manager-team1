@@ -218,6 +218,42 @@
         }
       }
     },
+    "/gatos/{id}/status": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "put gatos object",
+            "in": "body",
+            "description": "Update adoption cat",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "disponivel"
+                }
+              },
+              "required": [
+                "status"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/gatos/{id}": {
       "put": {
         "tags": [],

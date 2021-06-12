@@ -9,7 +9,6 @@ exports.register = async (gatos) =>{
         throw error;
     }
 }
-
 exports.update = async (id, newGato) => {
     try {
       const gato = await Gato.findOne({ 
