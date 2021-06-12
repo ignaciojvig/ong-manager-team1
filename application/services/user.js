@@ -4,7 +4,7 @@ const crypto = require('crypto');
 exports.register = async (user) => {
     try {
       const new_password = crypto
-      .createHash('md5')
+      .createHash('sha256')
       .update(user.password)
       .digest('hex');
       user.password = new_password;
