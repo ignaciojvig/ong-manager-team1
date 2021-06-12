@@ -3,9 +3,12 @@ const consign = require('consign');
 const swaggerUi = require('swagger-ui-express');
 const sequelize = require('./config/connection');
 const swaggerDocument = require('./swagger_output.json');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const opn = require('opn');
 
 const app = express();
+ 
+opn ('http://localhost:3000/api-docs');
 
 const start = async () => {
   try {
