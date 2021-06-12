@@ -4,6 +4,7 @@ const swaggerUi = require('swagger-ui-express');
 const sequelize = require('./config/connection');
 const swaggerDocument = require('./swagger_output.json');
 const morgan = require('morgan')
+const open = require('open');
 
 const app = express();
 
@@ -31,5 +32,11 @@ const start = async () => {
   }
 };
 start();
+ 
+(async () => {
+    await open('http://localhost:3000/api-docs');
+    console.log('http://localhost:3000/api-docs');
+})();
+
 module.exports = app;
 
