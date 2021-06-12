@@ -1,0 +1,15 @@
+---
+application:
+  name: "ong-manager-team1"
+  project: "Teste"
+  organization: "QoveryCommunity"
+databases:
+- type: "MYSQL"
+  name: "mysqldb"
+  version: "5.7"
+routers:
+- name: "main-ong-manager-team1"
+  routes:
+  - application_name: "ong-manager-team1"
+    paths:
+    - "/*"

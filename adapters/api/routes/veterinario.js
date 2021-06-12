@@ -9,6 +9,17 @@ const invalidRequestReply = (request, reply, errors) => reply.status(400).json({
 
 module.exports = (app) => {
   app.post('/veterinario', validators.registerValidator(), async (request, reply) => {
+            /*  #swagger.parameters['post vet object'] = {
+            in: 'body',
+            description: "New vet values",
+            schema: {
+                "$nome": "Tobias Carvalho",
+                "$crmv": "1234567",
+                "$cpf": "12345678910",
+                "$email": "exemplo@exemplo.com",
+                "$telefone": "(19) 99999-9999"
+            }
+    } */
     const errors = validators.validateRequest(request);
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);
@@ -28,6 +39,17 @@ module.exports = (app) => {
   });
 
   app.put('/veterinario/:id', validators.updateValidator(), async (request, reply) => {
+        /*  #swagger.parameters['put vet object'] = {
+            in: 'body',
+            description: "Update vet values",
+            schema: {
+                "$nome": "Tobias Carvalho",
+                "$crmv": "1234567",
+                "$cpf": "12345678910",
+                "$email": "exemplo@exemplo.com",
+                "$telefone": "(19) 99999-9999"
+            }
+    } */
     const errors = validators.validateRequest(request);
     if (errors.length > 0) {
       return invalidRequestReply(request, reply, errors);
